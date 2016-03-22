@@ -1,6 +1,6 @@
 package com.daicoden.jruby;
 
-class BrokenImplementation implements TestInterface {
+public class WorkingImplementation implements TestInterface {
   private Boolean lockAcquired = null;
 
   @Override public void doWork() {

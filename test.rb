@@ -10,14 +10,12 @@ unless ENV["CONTAINER"] == "NATIVE" # set by main.java
   end
 end
 
-x = true
-if x
-  implementation = com.daicoden.jruby.ImplementationFactory.new.getBrokenImplementation("boop")
-end
+implementation = com.daicoden.jruby.ImplementationFactory.getWorkingImplementation
+implementation.doWork
+puts " #{implementation.isLockAcquired} should be true"
 
-if implementation
-  puts "running with broken implementation"
-  puts "#{implementation.doWork()} should be true"
-  puts "#{implementation.wasCalled} should be true"
-end
+implementation = com.daicoden.jruby.ImplementationFactory.getBrokenImplementation
+implementation.doWork
+puts " #{implementation.isLockAcquired} should be true"
+
 

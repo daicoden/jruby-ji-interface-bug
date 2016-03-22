@@ -1,7 +1,11 @@
 package com.daicoden.jruby;
 
 public class ImplementationFactory {
-  BrokenImplementation getBrokenImplementation(String argument) {
-    return new BrokenImplementation(argument);
+  public static BrokenImplementation getBrokenImplementation() {
+    return new BrokenImplementation();
+  }
+
+  public static WorkingImplementation getWorkingImplementation() {
+    return new WorkingImplementation();
   }
 }
